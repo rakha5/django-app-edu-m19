@@ -1,0 +1,37 @@
+{% extends 'shopapp/base.html'%}
+
+{% block title %}
+    Shop Index
+{% endblock %}
+
+{% block body %}
+
+    <h1>Hello, Shop Index!</h1>
+
+    <div>
+        <ul>
+            {% for name, price in products %}
+                <li>{{ name|capfirst }} ({{ name|wordcount }}) for ${{ price }}</li>
+                {% if price|get_digit:'1' == 9 %}
+                    <span>Best price!</span>
+                {% endif %}
+            {% empty %}
+                No products here
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div>
+        Time running: {{ time_running }}
+    </div>
+
+    <div>
+        {% lorem 1 p %}
+    </div>
+
+    <div>
+        Current datetime: {% now 'd-m-Y H:i:s e' %}
+    </div>
+
+{% endblock %}
