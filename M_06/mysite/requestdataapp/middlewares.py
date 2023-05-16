@@ -27,7 +27,7 @@ class CountRequestsMiddleware:
         self.request_time = {}
 
     def __call__(self, request: HttpRequest):
-        time_delay = 10
+        time_delay = 1
         if not self.request_time:
             print('first request')
         else:
