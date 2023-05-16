@@ -9,14 +9,14 @@ class ProductForm(forms.Form):
     description = forms.CharField(
         label='Product description',
         widget=forms.Textarea(attrs={'rows': 5, 'cols': 30}),
-        validators=[validators.RegexValidator(
-            regex=r'great',
-            message='Field must contain word "great"'
-        )]
+        # validators=[validators.RegexValidator(
+        #     regex=r'great',
+        #     message='Field must contain word "great"'
+        # )]
     )
 
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = 'delivery_address', 'promocode', 'products'
+        fields = 'delivery_address', 'promocode', 'user', 'products'
