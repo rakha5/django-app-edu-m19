@@ -34,8 +34,15 @@ class CountRequestsMiddleware:
             if (round(time.time()) * 1) - self.request_time['time'] < time_delay \
                     and self.request_time['ip_address'] == request.META.get('REMOTE_ADDR'):
                         print('Requests limit exceeded')
-                        context = {'time_delay': time_delay}
-                        return render(request, 'requestdataapp/requests-limit-error-message.html', context=context)
+                        context = {
+                            'time_delay': time_delay,
+                            'title': 'Requests limit error message',
+                            'error_msg': f'Error! The number of requests from your ip-address is exceeded. '
+                                         f'Please try later in {time_delay} seconds',
+                            'href_msg': f'Please wait {time_delay} sec. and you can return back to page',
+
+                        }
+                        return render(request, 'requestdataapp/error-message.html', context=context)
         self.request_time = {'time': round(time.time()) * 1, 'ip_address': request.META.get('REMOTE_ADDR')}
 
         self.requests_count += 1

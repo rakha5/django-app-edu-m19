@@ -35,7 +35,13 @@ def handle_file_upload(request: HttpRequest) -> HttpResponse:
             if file_size > 1048576:
                 fs.delete(filename)
                 print('file deleted', filename)
-                return render(request, 'requestdataapp/filesize-error-message.html')
+                context = {
+                    'title': 'Filesize error message',
+                    'error_msg': 'Error! Filesize couldn`t be more than 1 Mb.',
+                    'href_msg': 'Return to upload file page',
+                }
+
+                return render(request, 'requestdataapp/error-message.html', context=context)
             else:
                 print('file saved', filename)
     else:
