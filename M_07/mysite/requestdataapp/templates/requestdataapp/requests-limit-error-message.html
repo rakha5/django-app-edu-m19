@@ -1,0 +1,11 @@
+{% extends 'requestdataapp/base.html' %}
+
+{% block title %}
+    Requests limit error message
+{% endblock %}
+
+{% block body %}
+    <h1>Error! The number of requests from your ip-address is exceeded. Please try later in {{ time_delay }} seconds</h1>
+        <a href="">Please wait {{ time_delay }} sec. and you can return back to page</a>
+
+{% endblock %}
