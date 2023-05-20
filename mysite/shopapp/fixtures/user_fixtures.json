@@ -1,0 +1,108 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$NHZ2YjZ0RDdKNURMWmJEU3NlbGZoYg$itMm674PGQRiBPCo6Vc6ojbthlnFeO40bHh3Yk54cwk",
+      "last_login": "2023-05-19T11:11:26.533Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "John",
+      "last_name": "Wick",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-05-09T09:35:27Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$MlZBbWFzZkw1RzVFTHBId3p1VFdFUA$z1OE6eFJZlhxz7GIE0w9udTvcBPMz/9cIZr/gL9hPVY",
+      "last_login": "2023-05-19T11:11:49.754Z",
+      "is_superuser": false,
+      "username": "maks",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-18T14:29:51Z",
+      "groups": [],
+      "user_permissions": [
+        36,
+        32,
+        25,
+        26,
+        27,
+        28
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$V2hRQ3lQRFZhSzE0T0w0UklWZENDSQ$86umMusn3OfQx58QbpI1oyJreiQdKbyzdiu6mfTE4Xg",
+      "last_login": "2023-05-19T11:05:49.316Z",
+      "is_superuser": false,
+      "username": "keks",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-05-18T14:38:26Z",
+      "groups": [
+        3
+      ],
+      "user_permissions": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$MG9CNkxTdVpxdFFFZ3RRSEJJMGNnSQ$vyMP+At5+TqvHhUKiWgmFcQJCAxjzJWUbFiwFvwdYtE",
+      "last_login": "2023-05-19T10:33:58.746Z",
+      "is_superuser": false,
+      "username": "kaxa",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-18T14:55:57Z",
+      "groups": [
+        4
+      ],
+      "user_permissions": [
+        4,
+        30
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "argon2$argon2id$v=19$m=102400,t=2,p=8$YmVTcTN0M2JLSkZNdU5UU0Fud2VESQ$QFcppuEoVbTOqIfiwifP4TcAYseDAKNfuxI0afqOovU",
+      "last_login": "2023-05-19T09:52:28.313Z",
+      "is_superuser": false,
+      "username": "para",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-05-18T15:07:10.020Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
