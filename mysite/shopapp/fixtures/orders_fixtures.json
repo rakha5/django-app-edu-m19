@@ -1,0 +1,59 @@
+[
+  {
+    "model": "shopapp.order",
+    "pk": 1,
+    "fields": {
+      "delivery_address": "Pushkin street 12, 84/2",
+      "promocode": "APPLE2305",
+      "created_at": "2023-05-11T17:21:47.539Z",
+      "user": 1,
+      "products": [
+        14,
+        15,
+        18,
+        13
+      ]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 4,
+    "fields": {
+      "delivery_address": "Msc, Lermontov str, 55-3",
+      "promocode": "APPLE2305",
+      "created_at": "2023-05-16T09:34:45.271Z",
+      "user": 1,
+      "products": [
+        14
+      ]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 5,
+    "fields": {
+      "delivery_address": "Sochi, Davletov str, 5",
+      "promocode": "MAY23",
+      "created_at": "2023-05-16T09:35:45.324Z",
+      "user": 1,
+      "products": [
+        15,
+        13
+      ]
+    }
+  },
+  {
+    "model": "shopapp.order",
+    "pk": 7,
+    "fields": {
+      "delivery_address": "Moscow, Varshavskoe road, 87A, f.56",
+      "promocode": "",
+      "created_at": "2023-05-17T08:11:37.990Z",
+      "user": 1,
+      "products": [
+        15,
+        13
+      ]
+    }
+  }
+]

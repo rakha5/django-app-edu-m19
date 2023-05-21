@@ -6,7 +6,7 @@ from django.test import TestCase
 from django.urls import reverse
 from django.conf import settings
 
-from shopapp.models import Product
+from shopapp.models import Product, Order
 from shopapp.utils import sum_two_nums
 
 
@@ -137,3 +137,34 @@ class ProductsExportViewTestCase(TestCase):
         ]
         products_data = response.json()
         self.assertEqual(products_data['products'], expected_data,)
+
+
+class OrderDetailViewTestCase(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.user = User.objects.create_user(username='UserForTests', password='12345qwert')
+        cls.user.user_permissions.set([32])
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.user.delete()
+
+    def setUp(self) -> None:
+        self.client.force_login(self.user)
+        self.order = Order.objects.create(
+            promocode=''.join(choices(ascii_letters, k=15)),
+            user=self.user,
+            delivery_address='Test street 001',
+        )
+        self.order.products.set([14, 15])
+
+    def tearDown(self):
+        self.order.delete()
+
+    def test_order_details(self):
+        response = self.client.get(reverse(
+            'shopapp:order_details', kwargs={'pk': self.order.pk}
+        ))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, self.order.promocode)
+        self.assertContains(response, self.order.delivery_address)
