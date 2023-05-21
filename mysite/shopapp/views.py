@@ -177,3 +177,25 @@ class ProductsDataExportView(View):
             for product in products
         ]
         return JsonResponse({'products': products_data})
+
+
+class OrdersDataExportView(UserPassesTestMixin, View):
+    def test_func(self):
+        if self.request.user.is_staff or self.request.user.is_superuser:
+            return True
+        else:
+            return False
+
+    def get(self, request: HttpRequest) -> JsonResponse:
+        orders = Order.objects.order_by('pk').all()
+        orders_data = [
+            {
+                'pk': order.pk,
+                'delivery_address': order.delivery_address,
+                'promocode': order.promocode,
+                'user': order.user,
+                'products': order.products,
+            }
+            for order in orders
+        ]
+        return JsonResponse({'orders': orders_data})

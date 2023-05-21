@@ -168,3 +168,41 @@ class OrderDetailViewTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.order.promocode)
         self.assertContains(response, self.order.delivery_address)
+
+
+class OrdersExportViewTestCase(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.user = User.objects.create_user(username='UserForTests', password='12345qwert', is_staff=True)
+        # cls.user.user_permissions.set([32])
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.user.delete()
+
+    def setUp(self) -> None:
+        self.client.force_login(self.user)
+
+    fixtures = [
+        'user_fixtures.json',
+        'group_fixtures.json',
+        'orders_fixtures.json',
+        'products_fixtures.json',
+    ]
+
+    def test_get_orders_view(self):
+        response = self.client.get(reverse('shopapp:orders-export'))
+        self.assertEqual(response.status_code, 200)
+        orders = Order.objects.order_by('pk').all()
+        expected_data = [
+            {
+                'pk': order.pk,
+                'delivery_address': order.delivery_address,
+                'promocode': order.promocode,
+                'user': order.user.pk,
+                'products': order.products,
+            }
+            for order in orders
+        ]
+        orders_data = response.json()
+        self.assertEqual(orders_data['orders'], expected_data,)
