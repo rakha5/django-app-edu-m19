@@ -6,9 +6,7 @@
 
 {% block body %}
     <h1>Update user profile</h1>
-    <div>User for update pk - name: {{ object.user.pk }} - {{ object.user.username }}</div>
-    <div>User from users list pk: {{ object.pk }}</div>
-    <div>User authenticated: {{ user.id }}</div>
+    <h3>User: {{ object.user.username }}</h3>
     <div>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -18,7 +16,7 @@
     </div>
 
     <div>
-        <a href="{% url 'myauth:user_details' pk=object.pk %}"
-        >Back to user profile {{ object.pk }}</a>
+        <a href="{% url 'myauth:user_details' pk=object.user_id %}"
+        >Back to user profile {{ object.user_id }}</a>
     </div>
 {% endblock %}

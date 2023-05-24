@@ -17,10 +17,14 @@
         <div>Last name: {{ user.last_name }}</div>
         <div>E-mail: {{ user.email }}</div>
         <div>Date joined: {{ user.date_joined }}</div>
+        <div>Bio: {{ user.profile.bio }}</div>
+        <div>test: {{ request.user.id }} --- {{ user.profile.user_id }}</div>
     </div>
     <br>
     <div>
-        <a href="{% url 'myauth:user_update' pk=user.pk%}">Update user profile</a>
+        {% if request.user.id == user.profile.user_id or request.user.is_superuser or request.user.is_staff %}
+            <a href="{% url 'myauth:user_update' pk=user.profile.id %}">Update user profile</a>
+        {% endif %}
     </div>
     <div>
         <a href="{% url 'myauth:users-list' %}">Back to users list</a>

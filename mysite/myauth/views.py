@@ -45,6 +45,7 @@ class UsersListView(ListView):
 class UserDetailsView(DetailView):
     template_name = 'myauth/user-details.html'
     queryset = User.objects.all()
+    # form_class = UserDetailsForm
     context_object_name = 'user'
 
 
@@ -57,17 +58,15 @@ class UserUpdateView(UserPassesTestMixin, UpdateView):
         else:
             return False
 
+    # model = User
     model = Profile
     fields = 'bio', 'agreement_accepted', 'avatar'
-    template_name_suffix = '_update_form'
-
-    # def get_object(self, queryset=None):
-    #     return self.
+    template_name = 'myauth/profile_update_form.html'
 
     def get_success_url(self):
         return reverse(
             'myauth:user_details',
-            kwargs={'pk': self.object.pk},
+            kwargs={'pk': self.object.user_id},
         )
 
 

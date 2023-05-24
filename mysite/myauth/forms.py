@@ -8,3 +8,4 @@ class AboutMeForm(forms.ModelForm):
         fields = ['avatar']
 
     # images = forms.ImageField(widget=forms.ClearableFileInput(), )
+
