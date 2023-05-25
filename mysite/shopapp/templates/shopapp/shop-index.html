@@ -1,37 +1,48 @@
 {% extends 'shopapp/base.html'%}
 
+{% load i18n %}
+
 {% block title %}
-    Shop Index
+    {% translate 'Shop Index' %}
 {% endblock %}
 
 {% block body %}
 
-    <h1>Hello, Shop Index!</h1>
+    <h1>{% translate 'Hello, Shop Index' %}!</h1>
 
     <div>
         <ul>
             {% for name, price in products %}
                 <li>{{ name|capfirst }} ({{ name|wordcount }}) for ${{ price }}</li>
                 {% if price|get_digit:'1' == 9 %}
-                    <span>Best price!</span>
+                    <span>{% translate 'Best price' %}!</span>
                 {% endif %}
             {% empty %}
-                No products here
+                {% translate 'No products here' %}
             {% endfor %}
         </ul>
-
     </div>
-
     <div>
-        Time running: {{ time_running }}
+    <strong>
+        You have {{ items }} cherr{{ items|pluralize:"y,ies" }}
+    </strong>
     </div>
-
     <div>
-        {% lorem 1 p %}
-    </div>
+        {% now 'd-m-Y H:i:s e' as now_date %}
+        {% now 'd-m-Y H:i:s e' as my_lorem %}
+        {% blocktranslate %}
+            <div>
+                Time running: {{ time_running }}
+            </div>
 
-    <div>
-        Current datetime: {% now 'd-m-Y H:i:s e' %}
+            <div>
+                {{ my_lorem }}
+            </div>
+
+            <div>
+                Current datetime: {{ now_date }}
+            </div>
+        {% endblocktranslate %}
     </div>
 
 {% endblock %}

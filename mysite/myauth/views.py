@@ -7,11 +7,29 @@ from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _, ngettext
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 
 from .models import Profile
 from .forms import AboutMeForm
+
+class HelloView(View):
+    welcome_msg = _('welcome hello world')
+
+    def get(self, request: HttpRequest) -> HttpResponse:
+        items_str = request.GET.get('items') or 0
+        items = int(items_str)
+        products_line = ngettext(
+            'one product',
+            '{count} products',
+            items
+        )
+        products_line = products_line.format(count=items)
+        return HttpResponse(
+            f'<h1>{self.welcome_msg}</h1>'
+            f'\n<h2>{products_line}</h2>'
+        )
 
 
 class AboutMeView(DetailView):
