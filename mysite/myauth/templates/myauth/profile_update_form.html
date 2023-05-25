@@ -1,11 +1,12 @@
-{% extends 'shopapp/base.html'%}
+{% extends 'myauth/base.html'%}
 
 {% block title %}
-    Update product
+    Update user profile
 {% endblock %}
 
 {% block body %}
-    <h1>Update product</h1>
+    <h1>Update user profile</h1>
+    <h3>User: {{ object.user.username }}</h3>
     <div>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -15,7 +16,7 @@
     </div>
 
     <div>
-        <a href="{% url 'shopapp:product_details' pk=object.pk %}"
-        >Back to product {{ object.pk }}</a>
+        <a href="{% url 'myauth:user_details' pk=object.user_id %}"
+        >Back to user profile {{ object.user_id }}</a>
     </div>
 {% endblock %}

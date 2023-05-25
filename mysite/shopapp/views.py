@@ -5,12 +5,11 @@ from timeit import default_timer
 
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 
-from .models import Product, Order
-from .forms import GroupForm
-
+from .models import Product, Order, ProductImage
+from .forms import GroupForm, ProductForm
 
 class ShopIndexView(View):
     def get(self, request: HttpRequest) -> HttpResponse:
@@ -44,7 +43,8 @@ class GroupsListView(View):
 
 class ProductDetailsView(DetailView):
     template_name = 'shopapp/products-details.html'
-    model = Product
+    # model = Product
+    queryset = Product.objects.prefetch_related('images')
     context_object_name = 'product'
 
 
@@ -67,7 +67,7 @@ class ProductsListView(ListView):
 class ProductCreateView(PermissionRequiredMixin, CreateView):
     permission_required = 'shopapp.add_product'
     model = Product
-    fields = 'name', 'price', 'description'
+    fields = 'name', 'price', 'description', 'preview'
     # form_class = ProductForm
     success_url = reverse_lazy('shopapp:products_list')
 
@@ -88,14 +88,24 @@ class ProductUpdateView(UserPassesTestMixin, UpdateView):
             return False
 
     model = Product
-    fields = 'name', 'price', 'description'
+    # fields = 'name', 'price', 'description', 'preview'
     template_name_suffix = '_update_form'
+    form_class = ProductForm
 
     def get_success_url(self):
         return reverse(
             'shopapp:product_details',
             kwargs={'pk': self.object.pk},
         )
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        for image in form.files.getlist("images"):
+            ProductImage.objects.create(
+                product=self.object,
+                image=image,
+            )
+        return response
 
 
 class ProductDeleteView(DeleteView):
