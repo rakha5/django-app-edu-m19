@@ -1,22 +1,35 @@
+"""
+В этом модуле лежат различные наборы представлений.
+
+Разный view для интернет-магазина: по продуктам, заказам и т.д.
+"""
+
 from django.http import HttpResponse, HttpRequest, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.models import Group
 from timeit import default_timer
 
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView, FormView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.viewsets import ModelViewSet
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 
 from .models import Product, Order, ProductImage
 from .forms import GroupForm, ProductForm
 from .serializers import ProductSerializer, OrderSerializer
 
 
+@extend_schema(description='Product views CRUD')
 class ProductViewSet(ModelViewSet):
+    """
+    Набор представлений для действия над Product.
+
+    Полный CRUD для сущностей товара.
+    """
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_backends = [
@@ -38,8 +51,24 @@ class ProductViewSet(ModelViewSet):
         'discount',
     ]
 
+    @extend_schema(
+        summary='Get one product by id',
+        description='Retrieves **product**, returns 404 if not found',
+        responses={
+            200: ProductSerializer,
+            404: OpenApiResponse(description='Empty response, product by id not found'),
+        }
+    )
+    def retrieve(self, *args, **kwargs):
+        return super().retrieve(*args, **kwargs)
+
 
 class OrderViewSet(ModelViewSet):
+    """
+    Набор представлений для действия над Order.
+
+    Полный CRUD для сущностей заказа.
+    """
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     filter_backends = [
