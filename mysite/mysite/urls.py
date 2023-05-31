@@ -22,6 +22,8 @@ from django.conf.urls.i18n import i18n_patterns
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
+import debug_toolbar
+
 urlpatterns = [
     # path('req/', include('requestdataapp.urls')),
     path('admin/docs/', include('django.contrib.admindocs.urls')),
@@ -31,6 +33,8 @@ urlpatterns = [
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
     path('api/', include('myapiapp.urls')),
     path('blogapp/', include('blogapp.urls')),
+    path('__debug__/', include(debug_toolbar.urls))
+
 ]
 
 urlpatterns += i18n_patterns(

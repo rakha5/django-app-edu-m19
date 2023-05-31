@@ -3,10 +3,23 @@ from django.contrib import admin
 from .models import Author, Category, Tag, Article
 
 
-# class ProfileAdmin(admin.ModelAdmin):
-#     list_display = ['user', 'bio', 'agreement_accepted', 'avatar']
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ['title', 'content', 'author', 'category']
 
-admin.site.register(Author)
-admin.site.register(Category)
-admin.site.register(Tag)
-admin.site.register(Article)
+
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ['name', 'description']
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+class TagAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+
+admin.site.register(Author, AuthorAdmin)
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Tag, TagAdmin)
+admin.site.register(Article, ArticleAdmin)

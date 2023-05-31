@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'drf_spectacular',
+    'debug_toolbar',
 
     'shopapp.apps.ShopappConfig',
     # 'requestdataapp.apps.RequestdataappConfig',
@@ -67,6 +68,7 @@ MIDDLEWARE = [
     # 'requestdataapp.middlewares.CountRequestsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -181,24 +183,59 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
 }
 
+# LOGGING = {
+#     'version': 1,
+#     'filters': {
+#         'require_debug_true': {
+#             '()': 'django.utils.log.RequireDebugTrue',
+#         },
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'filters': ['require_debug_true'],
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'level': 'DEBUG',
+#             'handlers': ['console'],
+#         },
+#     },
+# }
+
 LOGGING = {
     'version': 1,
-    'filters': {
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(name)-10s %(levelname)-10s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-5s %(levelname)-5s %(message)s'
         },
     },
     'handlers': {
         'console': {
             'level': 'DEBUG',
-            'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',
+            'formatter': 'console',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+            'formatter': 'file',
         },
     },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-        },
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['console', 'file'],
+        'propagate': True,
     },
 }
+
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
