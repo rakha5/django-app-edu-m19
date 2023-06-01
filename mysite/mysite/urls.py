@@ -19,10 +19,16 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from django.contrib.sitemaps.views import sitemap
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from app_news.sitemap import NewsSitemap
 
 import debug_toolbar
+
+sitemaps = {
+    'news': NewsSitemap,
+}
 
 urlpatterns = [
     # path('req/', include('requestdataapp.urls')),
@@ -33,7 +39,11 @@ urlpatterns = [
     path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
     path('api/', include('myapiapp.urls')),
     path('blogapp/', include('blogapp.urls')),
-    path('__debug__/', include(debug_toolbar.urls))
+    path('__debug__/', include(debug_toolbar.urls)),
+    path('news/', include('app_news.urls')),
+    path('rss/', include('app_rss.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
 
 ]
 

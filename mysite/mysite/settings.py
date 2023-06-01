@@ -42,11 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
 
     'rest_framework',
     'django_filters',
     'drf_spectacular',
     'debug_toolbar',
+    'app_news',
+    'app_rss',
 
     'shopapp.apps.ShopappConfig',
     # 'requestdataapp.apps.RequestdataappConfig',
@@ -54,6 +58,8 @@ INSTALLED_APPS = [
     'myapiapp.apps.MyapiappConfig',
     'blogapp.apps.BlogappConfig',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

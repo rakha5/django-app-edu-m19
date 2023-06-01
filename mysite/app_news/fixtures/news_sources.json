@@ -1,0 +1,18 @@
+[
+  {
+    "model": "app_news.newssource",
+    "pk": 1,
+    "fields": {
+      "name": "Source1",
+      "code": "first source"
+    }
+  },
+  {
+    "model": "app_news.newssource",
+    "pk": 2,
+    "fields": {
+      "name": "Source2",
+      "code": "second source"
+    }
+  }
+]
