@@ -38,4 +38,5 @@ class ProductForm(forms.ModelForm):
 
     images = forms.ImageField(
         widget=forms.ClearableFileInput(attrs={"allow_multiple_selected": True}),
+        required=False,
     )
