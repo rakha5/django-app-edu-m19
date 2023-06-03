@@ -22,12 +22,13 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib.sitemaps.views import sitemap
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
-from app_news.sitemap import NewsSitemap
+from homesale.sitemap import NewsSitemap, StaticViewSitemap
 
 import debug_toolbar
 
 sitemaps = {
     'news': NewsSitemap,
+    'static': StaticViewSitemap,
 }
 
 urlpatterns = [
@@ -40,11 +41,11 @@ urlpatterns = [
     path('api/', include('myapiapp.urls')),
     path('blogapp/', include('blogapp.urls')),
     path('__debug__/', include(debug_toolbar.urls)),
-    path('news/', include('app_news.urls')),
+    # path('news/', include('app_news.urls')),
     path('rss/', include('app_rss.urls')),
+    path('homesale/', include('homesale.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
-
 ]
 
 urlpatterns += i18n_patterns(

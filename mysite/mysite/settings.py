@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.admindocs',
     'django.contrib.sitemaps',
     'django.contrib.sites',
+    'homesale.apps.HomesaleConfig',
 
     'rest_framework',
     'django_filters',
@@ -57,6 +58,7 @@ INSTALLED_APPS = [
     'myauth.apps.MyauthConfig',
     'myapiapp.apps.MyapiappConfig',
     'blogapp.apps.BlogappConfig',
+    # 'homesale.apps.HomesaleConfig',
 ]
 
 SITE_ID = 1
