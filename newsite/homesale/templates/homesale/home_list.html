@@ -1,0 +1,26 @@
+{% extends 'homesale/base.html'%}
+
+{% block title %}
+  Homes list
+{% endblock %}
+
+{% block body %}
+  <h1>Homes:</h1>
+    {% for home in object_list %}
+        <div>
+            <p>Name: {{ home.name }}</p>
+            <p>Address: {{ home.address }}</p>
+            <p>Square feet: {{ home.square_feet }}</p>
+            <p>Price: {{ home.price }}</p>
+            <p>Type: {{ home.type }}</p>
+            <p>Rooms amount: {{ home.rooms_amount }}</p>
+            <p>Description: {{ home.description|truncatechars:300 }}</p>
+            <br>
+        </div>
+    {% endfor %}
+    <br>
+    <div>
+        <a href="{% url 'homesale:main' %}"
+        >Back to main page</a>
+    </div>
+{% endblock %}

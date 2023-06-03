@@ -1,0 +1,11 @@
+{% extends 'homesale/base.html'%}
+
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.text }}</p>
+    <p>{{ object.descriptions }}</p>
+{% endblock %}

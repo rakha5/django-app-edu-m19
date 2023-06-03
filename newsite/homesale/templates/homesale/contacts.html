@@ -1,0 +1,20 @@
+{% extends 'homesale/base.html'%}
+
+{% block title %}
+    Contacts
+{% endblock %}
+
+{% block body %}
+    <h1>Contacts</h1>
+    <br>
+    <div>
+        <h3>You can contact us by:</h3>
+        <p>Telephone: {{ phone_num }}</p>
+        <p>E-mail: {{ email }}</p>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'homesale:main' %}"
+        >Back to main page</a>
+    </div>
+{% endblock %}

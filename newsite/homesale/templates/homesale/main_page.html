@@ -1,0 +1,31 @@
+{% extends 'homesale/base.html'%}
+
+{% block title %}
+    Home for Sale
+{% endblock %}
+
+{% block body %}
+    <h1>Home Sale</h1>
+    <br>
+    <div>
+        <p>Welcome! We help you find home for sale!</p>
+        <p>Let`s start! You can visit any web page from the list below:</p>
+    </div>
+    <br>
+    <div>
+        <a href="{% url 'homesale:about' %}"
+        >About us</a>
+    </div>
+    <div>
+        <a href="{% url 'homesale:contacts' %}"
+        >Contact us</a>
+    </div>
+    <div>
+        <a href="{% url 'homesale:homes' %}"
+        >List of homes</a>
+    </div>
+    <div>
+        <a href="{% url 'homesale:news' %}"
+        >News</a>
+    </div>
+{% endblock %}
