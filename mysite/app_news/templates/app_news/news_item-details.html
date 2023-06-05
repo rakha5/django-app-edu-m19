@@ -1,0 +1,10 @@
+{% extends 'app_news/base.html'%}
+
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.description }}</p>
+{% endblock %}

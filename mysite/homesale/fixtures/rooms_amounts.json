@@ -1,0 +1,72 @@
+[
+  {
+    "model": "homesale.roomsamount",
+    "pk": 1,
+    "fields": {
+      "rooms_amt": 1
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 2,
+    "fields": {
+      "rooms_amt": 2
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 3,
+    "fields": {
+      "rooms_amt": 3
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 4,
+    "fields": {
+      "rooms_amt": 4
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 5,
+    "fields": {
+      "rooms_amt": 5
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 6,
+    "fields": {
+      "rooms_amt": 6
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 7,
+    "fields": {
+      "rooms_amt": 7
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 8,
+    "fields": {
+      "rooms_amt": 8
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 9,
+    "fields": {
+      "rooms_amt": 9
+    }
+  },
+  {
+    "model": "homesale.roomsamount",
+    "pk": 10,
+    "fields": {
+      "rooms_amt": 10
+    }
+  }
+]

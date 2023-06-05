@@ -1,0 +1,16 @@
+[
+  {
+    "model": "homesale.hometype",
+    "pk": 1,
+    "fields": {
+      "name": "House"
+    }
+  },
+  {
+    "model": "homesale.hometype",
+    "pk": 2,
+    "fields": {
+      "name": "Flat"
+    }
+  }
+]

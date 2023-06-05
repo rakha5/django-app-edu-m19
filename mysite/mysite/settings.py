@@ -42,18 +42,26 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admindocs',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
+    'homesale.apps.HomesaleConfig',
 
     'rest_framework',
     'django_filters',
     'drf_spectacular',
     'debug_toolbar',
+    'app_news',
+    'app_rss',
 
     'shopapp.apps.ShopappConfig',
     # 'requestdataapp.apps.RequestdataappConfig',
     'myauth.apps.MyauthConfig',
     'myapiapp.apps.MyapiappConfig',
     'blogapp.apps.BlogappConfig',
+    # 'homesale.apps.HomesaleConfig',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
