@@ -46,6 +46,19 @@ class NewsListView(ListView):
     context_object_name = 'news'
     queryset = (News.objects.filter(is_published=True))
 
+    def get(self, request: HttpRequest) -> HttpResponse:
+        news_objects = cache.get('news_objects')
+
+        if news_objects is None:
+            news_objects = News.objects.all()
+            cache.set('news_objects', news_objects)
+
+        context = {
+            'news': news_objects,
+        }
+
+        return render(request, self.template_name, context=context)
+
 
 class NewsDetailsView(DetailView):
     model = News

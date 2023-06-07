@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-07 15:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: app_shops/models.py:6
+msgid "name"
+msgstr "имя"
+
+#: homesale/models.py:8
+msgid "Home"
+msgstr "Жилье"
+
+#: homesale/models.py:9 homesale/templates/homesale/home_list.html:12
+msgid "Homes"
+msgstr "Жилье"
+
+#: homesale/models.py:22
+msgid "Home Type"
+msgstr "Тип жилья"
+
+#: homesale/models.py:23
+msgid "Home Types"
+msgstr "Типы жилья"
+
+#: homesale/models.py:34 homesale/models.py:35
+msgid "Rooms Amount"
+msgstr "Количество комнат"
+
+#: homesale/models.py:46 homesale/models.py:47
+#: homesale/templates/homesale/main_page.html:31
+#: homesale/templates/homesale/news_list.html:10
+msgid "News"
+msgstr "Новости"
+
+#: homesale/templates/homesale/about_us.html:6
+#: homesale/templates/homesale/about_us.html:10
+#: homesale/templates/homesale/main_page.html:19
+msgid "About us"
+msgstr "О нас"
+
+#: homesale/templates/homesale/about_us.html:13
+msgid "Home Sale team welcomes you!"
+msgstr "Команда компании 'Продажа Жилья' приветствует вас!"
+
+#: homesale/templates/homesale/about_us.html:14
+msgid ""
+"We are a young growing team that will help you find the best property to buy!"
+msgstr ""
+"Мы - молодая и активно развивающаяся команда, которая поможет вам найти "
+"лучшее жилье для покупки!"
+
+#: homesale/templates/homesale/about_us.html:19
+#: homesale/templates/homesale/contacts.html:22
+#: homesale/templates/homesale/home_list.html:28
+#: homesale/templates/homesale/news_list.html:25
+msgid "Back to main page"
+msgstr "Вернуться на главную страницу"
+
+#: homesale/templates/homesale/contacts.html:6
+#: homesale/templates/homesale/contacts.html:10
+msgid "Contacts"
+msgstr "Наши контакты"
+
+#: homesale/templates/homesale/contacts.html:13
+#, python-format
+msgid ""
+"\n"
+"            <h3>You can contact us by:</h3>\n"
+"            <p>Telephone: %(phone_num)s</p>\n"
+"            <p>E-mail: %(email)s</p>\n"
+"        "
+msgstr ""
+"\n"
+"            <h3>Вы можете связаться с нами любым удобным способом:</h3>\n"
+"            <p>Телефон: %(phone_num)s</p>\n"
+"            <p>Элекронная почта: %(email)s</p>\n"
+"        "
+
+#: homesale/templates/homesale/home_list.html:7
+msgid "Homes list"
+msgstr "Список жилья"
+
+#: homesale/templates/homesale/home_list.html:15
+msgid "Name"
+msgstr "Название"
+
+#: homesale/templates/homesale/home_list.html:16
+msgid "Address"
+msgstr "Адрес"
+
+#: homesale/templates/homesale/home_list.html:17
+msgid "Square feet"
+msgstr "Площадь (в м2)"
+
+#: homesale/templates/homesale/home_list.html:18
+msgid "Price"
+msgstr "Цена"
+
+#: homesale/templates/homesale/home_list.html:19
+msgid "Type"
+msgstr "Тип жилья"
+
+#: homesale/templates/homesale/home_list.html:20
+msgid "Rooms amount"
+msgstr "Количество комнат"
+
+#: homesale/templates/homesale/home_list.html:21
+#: homesale/templates/homesale/news_details.html:12
+#: homesale/templates/homesale/news_list.html:17
+msgid "Description"
+msgstr "Описание"
+
+#: homesale/templates/homesale/main_page.html:6
+#: homesale/templates/homesale/main_page.html:10
+msgid "Home for Sale"
+msgstr "Продажа жилья"
+
+#: homesale/templates/homesale/main_page.html:13
+msgid "Welcome! We help you find home for sale!"
+msgstr "Добро пожаловать! Мы поможем Вам найти жилье для покупки!"
+
+#: homesale/templates/homesale/main_page.html:14
+msgid "Let`s start! You can visit any web page from the list below"
+msgstr "Давайте начнем! Вы можете перейти на любую страницу из списка ниже"
+
+#: homesale/templates/homesale/main_page.html:23
+msgid "Contact us"
+msgstr "Наши контакты"
+
+#: homesale/templates/homesale/main_page.html:27
+msgid "List of homes"
+msgstr "Список жилья"
+
+#: homesale/templates/homesale/news_details.html:10
+msgid "Title"
+msgstr "Заголовок"
+
+#: homesale/templates/homesale/news_details.html:11
+msgid "Text"
+msgstr "Текст"
+
+#: homesale/templates/homesale/news_details.html:16
+msgid "Back to news list"
+msgstr "Вернуться к списку новостей"
+
+#: homesale/templates/homesale/news_list.html:6
+msgid "News list"
+msgstr "Список новостей"
+
+#: homesale/templates/homesale/news_list.html:14
+msgid "Details"
+msgstr "Подробности"
+
+#: homesale/templates/homesale/news_list.html:18
+msgid "Published at"
+msgstr "Опубликовано"
+
+#: newsite/settings.py:131
+msgid "English"
+msgstr "Английский"
+
+#: newsite/settings.py:132
+msgid "Russian"
+msgstr "Русский"

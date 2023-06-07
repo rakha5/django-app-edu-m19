@@ -15,6 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
@@ -28,14 +29,19 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('homesale/', include('homesale.urls')),
+    # path('admin/', admin.site.urls),
+    # path('homesale/', include('homesale.urls')),
     path('rss/', include('app_rss.urls')),
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     path('', include('app_pages.urls')),
     path('', include('app_shops.urls')),
 ]
+
+urlpatterns += i18n_patterns(
+    path('admin/', admin.site.urls),
+    path('homesale/', include('homesale.urls')),
+)
 
 if settings.DEBUG:
     urlpatterns.extend(

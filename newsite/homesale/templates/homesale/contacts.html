@@ -1,20 +1,24 @@
 {% extends 'homesale/base.html'%}
 
+{% load i18n %}
+
 {% block title %}
-    Contacts
+    {% translate 'Contacts' %}
 {% endblock %}
 
 {% block body %}
-    <h1>Contacts</h1>
+    <h1>{% translate 'Contacts' %}</h1>
     <br>
     <div>
-        <h3>You can contact us by:</h3>
-        <p>Telephone: {{ phone_num }}</p>
-        <p>E-mail: {{ email }}</p>
+        {% blocktranslate %}
+            <h3>You can contact us by:</h3>
+            <p>Telephone: {{ phone_num }}</p>
+            <p>E-mail: {{ email }}</p>
+        {% endblocktranslate %}
     </div>
     <br>
     <div>
         <a href="{% url 'homesale:main' %}"
-        >Back to main page</a>
+        >{% translate 'Back to main page' %}</a>
     </div>
 {% endblock %}
