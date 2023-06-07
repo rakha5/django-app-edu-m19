@@ -7,11 +7,16 @@ from homesale.models import News
 
 
 class HomesaleMainViewTestCase(TestCase):
+    # def test_homesale_main_view(self):
+    #     # url = 'en/'.join(reverse('homesale:main'))
+    #     # response = self.client.get(url)
+    #     response = self.client.get(reverse('homesale:main'), HTTP_ACCEPT_LANGUAGE='en')
+    #     self.assertContains(response, 'Home Sale')
 
     def test_homesale_main_view(self):
         with translation.override('en'):
             response = self.client.get(reverse('homesale:main'))
-        self.assertContains(response, 'Home for Sale')
+        self.assertContains(response, 'Home Sale')
 
 
 class ContactsViewTestCase(TestCase):
