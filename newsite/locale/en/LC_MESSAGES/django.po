@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-07 15:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app_shops/models.py:6
+msgid "name"
+msgstr "name"
+
+#: homesale/models.py:8
+msgid "Home"
+msgstr "Home"
+
+#: homesale/models.py:9 homesale/templates/homesale/home_list.html:12
+msgid "Homes"
+msgstr "Homes"
+
+#: homesale/models.py:22
+msgid "Home Type"
+msgstr "Home Type"
+
+#: homesale/models.py:23
+msgid "Home Types"
+msgstr "Home Types"
+
+#: homesale/models.py:34 homesale/models.py:35
+msgid "Rooms Amount"
+msgstr "Rooms Amount"
+
+#: homesale/models.py:46 homesale/models.py:47
+#: homesale/templates/homesale/main_page.html:31
+#: homesale/templates/homesale/news_list.html:10
+msgid "News"
+msgstr "News"
+
+#: homesale/templates/homesale/about_us.html:6
+#: homesale/templates/homesale/about_us.html:10
+#: homesale/templates/homesale/main_page.html:19
+msgid "About us"
+msgstr "About us"
+
+#: homesale/templates/homesale/about_us.html:13
+msgid "Home Sale team welcomes you!"
+msgstr "Home Sale team welcomes you!"
+
+#: homesale/templates/homesale/about_us.html:14
+msgid ""
+"We are a young growing team that will help you find the best property to buy!"
+msgstr ""
+"We are a young growing team that will help you find the best property to buy!"
+
+#: homesale/templates/homesale/about_us.html:19
+#: homesale/templates/homesale/contacts.html:22
+#: homesale/templates/homesale/home_list.html:28
+#: homesale/templates/homesale/news_list.html:25
+msgid "Back to main page"
+msgstr "Back to main page"
+
+#: homesale/templates/homesale/contacts.html:6
+#: homesale/templates/homesale/contacts.html:10
+msgid "Contacts"
+msgstr "Contacts"
+
+#: homesale/templates/homesale/contacts.html:13
+#, python-format
+msgid ""
+"\n"
+"            <h3>You can contact us by:</h3>\n"
+"            <p>Telephone: %(phone_num)s</p>\n"
+"            <p>E-mail: %(email)s</p>\n"
+"        "
+msgstr ""
+"\n"
+"            <h3>You can contact us by:</h3>\n"
+"            <p>Telephone: %(phone_num)s</p>\n"
+"            <p>E-mail: %(email)s</p>\n"
+"        "
+
+#: homesale/templates/homesale/home_list.html:7
+msgid "Homes list"
+msgstr "Homes list"
+
+#: homesale/templates/homesale/home_list.html:15
+msgid "Name"
+msgstr "Name"
+
+#: homesale/templates/homesale/home_list.html:16
+msgid "Address"
+msgstr "Address"
+
+#: homesale/templates/homesale/home_list.html:17
+msgid "Square feet"
+msgstr "Square feet"
+
+#: homesale/templates/homesale/home_list.html:18
+msgid "Price"
+msgstr "Price"
+
+#: homesale/templates/homesale/home_list.html:19
+msgid "Type"
+msgstr "Type"
+
+#: homesale/templates/homesale/home_list.html:20
+msgid "Rooms amount"
+msgstr "Rooms amount"
+
+#: homesale/templates/homesale/home_list.html:21
+#: homesale/templates/homesale/news_details.html:12
+#: homesale/templates/homesale/news_list.html:17
+msgid "Description"
+msgstr "Description"
+
+#: homesale/templates/homesale/main_page.html:6
+#: homesale/templates/homesale/main_page.html:10
+msgid "Home for Sale"
+msgstr "Home for Sale"
+
+#: homesale/templates/homesale/main_page.html:13
+msgid "Welcome! We help you find home for sale!"
+msgstr "Welcome! We help you find home for sale!"
+
+#: homesale/templates/homesale/main_page.html:14
+msgid "Let`s start! You can visit any web page from the list below"
+msgstr "Let`s start! You can visit any web page from the list below"
+
+#: homesale/templates/homesale/main_page.html:23
+msgid "Contact us"
+msgstr "Contact us"
+
+#: homesale/templates/homesale/main_page.html:27
+msgid "List of homes"
+msgstr "List of homes"
+
+#: homesale/templates/homesale/news_details.html:10
+msgid "Title"
+msgstr "Title"
+
+#: homesale/templates/homesale/news_details.html:11
+msgid "Text"
+msgstr "Text"
+
+#: homesale/templates/homesale/news_details.html:16
+msgid "Back to news list"
+msgstr "Back to news list"
+
+#: homesale/templates/homesale/news_list.html:6
+msgid "News list"
+msgstr "News list"
+
+#: homesale/templates/homesale/news_list.html:14
+msgid "Details"
+msgstr "Details"
+
+#: homesale/templates/homesale/news_list.html:18
+msgid "Published at"
+msgstr "Published at"
+
+#: newsite/settings.py:131
+msgid "English"
+msgstr "English"
+
+#: newsite/settings.py:132
+msgid "Russian"
+msgstr "Russian"
