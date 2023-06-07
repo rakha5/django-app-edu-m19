@@ -33,6 +33,8 @@ urlpatterns = [
     path('rss/', include('app_rss.urls')),
     path('sitemap.xml/', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
+    path('', include('app_pages.urls')),
+    path('', include('app_shops.urls')),
 ]
 
 if settings.DEBUG:
