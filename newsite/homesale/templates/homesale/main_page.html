@@ -1,31 +1,33 @@
 {% extends 'homesale/base.html'%}
 
+{% load i18n %}
+
 {% block title %}
-    Home for Sale
+    {% translate 'Home for Sale' %}
 {% endblock %}
 
 {% block body %}
-    <h1>Home Sale</h1>
+    <h1>{% translate 'Home for Sale' %}</h1>
     <br>
     <div>
-        <p>Welcome! We help you find home for sale!</p>
-        <p>Let`s start! You can visit any web page from the list below:</p>
+        <p>{% translate 'Welcome! We help you find home for sale!' %}</p>
+        <p>{% translate 'Let`s start! You can visit any web page from the list below' %}:</p>
     </div>
     <br>
     <div>
         <a href="{% url 'homesale:about' %}"
-        >About us</a>
+        >{% translate 'About us' %}</a>
     </div>
     <div>
         <a href="{% url 'homesale:contacts' %}"
-        >Contact us</a>
+        >{% translate 'Contact us' %}</a>
     </div>
     <div>
         <a href="{% url 'homesale:homes' %}"
-        >List of homes</a>
+        >{% translate 'List of homes' %}</a>
     </div>
     <div>
         <a href="{% url 'homesale:news' %}"
-        >News</a>
+        >{% translate 'News' %}</a>
     </div>
 {% endblock %}

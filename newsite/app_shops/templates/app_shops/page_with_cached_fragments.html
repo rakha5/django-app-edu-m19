@@ -1,0 +1,21 @@
+{% extends 'app_shops/base.html'%}
+
+{% load cache %}
+
+{% block title %}
+  Cached pages
+{% endblock %}
+
+{% cache 500 footer %}
+    {% block body %}
+      <h1>Shops:</h1>
+        {% block shop_list %}
+            {% for item in shops.all %}
+                <li>
+                <p> {{ item.name }}</p>
+                <br>
+                </li>
+            {% endfor %}
+        {% endblock %}
+    {% endblock %}
+{% endcache %}

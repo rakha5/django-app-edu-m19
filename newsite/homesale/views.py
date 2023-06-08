@@ -2,6 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views import View
 from django.views.generic import ListView, DetailView
+from django.core.cache import cache
 
 from homesale.models import Home, News
 
@@ -44,6 +45,19 @@ class NewsListView(ListView):
     # model = Home
     context_object_name = 'news'
     queryset = (News.objects.filter(is_published=True))
+
+    def get(self, request: HttpRequest) -> HttpResponse:
+        news_objects = cache.get('news_objects')
+
+        if news_objects is None:
+            news_objects = News.objects.all()
+            cache.set('news_objects', news_objects)
+
+        context = {
+            'news': news_objects,
+        }
+
+        return render(request, self.template_name, context=context)
 
 
 class NewsDetailsView(DetailView):
